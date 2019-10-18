@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to Artificial intelligence!"
 date:   2019-10-17 23:54:08 -0300
 categories: jekyll update
 ---
