@@ -16,7 +16,7 @@ e classificação de imagens.
 No caso da pneumonia, a busca é por áreas distorcidas da imagem causadas pelo impacto do vírus ou bactéria na pulmão do paciente.
 Com exemplo, as imagens abaixo mostram o raio-x de dois pacientes, a imagem a esquerda é de um paciente sem pneumonia , enquanto a da direita é de um paciente sem pneumonia. Podemos ver uma diferença notável nas duas imagens, enquanto a imagem a esquerda está mais limpa a da direita parece mais marcada com borrões pretos.
  
-![title](images/chest-xray/normal_chest_image.png)![alt-text-2](images/chest-xray/pneumonia_chest_image.png)
+![title](/assets/images/chest-xray/normal_chest_image.png)![alt-text-2](/assets/images/chest-xray/pneumonia_chest_image.png)
  
 No resto desse artigo eu vou falar sobre como foi o processo de criar um detector de pneumonia. O código completo apresentado nesse artigo está no formato de jupyter notebook e pode ser encontrado no [link][github_code].
  
@@ -33,11 +33,11 @@ A coleta de dados foi realizada através do site [kaggle][kaggle_link]. O conjun
  
 ### Sem Pneumonia: 
  
-![title](images/chest-xray/imagens_chest_xray_normal.png)
+![title](/assets/images/chest-xray/imagens_chest_xray_normal.png)
  
 ### Com Pneumonia:
  
-![title](images/chest-xray/imagens_chest_xray_pneumonia.png)
+![title](/assets/images/chest-xray/imagens_chest_xray_pneumonia.png)
  
 ## Pré-processamento 
  
@@ -76,7 +76,7 @@ model.add(Dense(num_category, activation='softmax'))
 Os resultados de performance foram obtidos através da previsão dos dados de teste. A figura abaixo apresenta taxa de acerto dos dois modelos criados. Como esperado o modelo responsável só por prever se o paciente tinha pneumonia obteve 75% de acurácia contra 66% do modelo que previa também se a pneumonia foi causada por uma bactéria ou vírus. Isso ocorre porque imagens de pacientes com pneumonia causada por bactéria são muito semelhantes àquelas causadas por vírus, o que torna a previsão muito mais difícil. Não foram realizados testes com outras arquiteturas de CNN ou com outros parâmetros e a arquitetura que foi utilizada foi bem simplificada para não consumir muitos recursos, então provavelmente à acurácia pode ser aumentada com mudança de arquitetura e de parâmetros de treinamento. 
 
 
-![title](images/chest-xray/acuracia.png)
+![title](/assets/images/chest-xray/acuracia.png)
 
 
 [redes_conv]: http://shorturl.at/EHW08
