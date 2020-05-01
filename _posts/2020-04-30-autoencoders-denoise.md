@@ -8,11 +8,11 @@ categories: mechine learning
 
 # Introdução 
 
-[Autoencoder][autoencoders] é um tipo de arquitetura de rede neural que possui duas partes. O encoder, que recebe a entrada, e fica responsável por reduzir gradualmente a dimensão sua dimensão, e o decoder que é responsável por receber uma entrada em menor dimensão e aumentá-la gradualmente. fazendo uma analogia com imagens, o encoder vai diminuir a resolução dessa imagem e o decoder vai aumentá-la. Então o objetivo do autoencoder é reproduzir a entrada.
+[Autoencoder][autoencoders] é um tipo de arquitetura de rede neural que possui duas partes. O encoder, que recebe a entrada, e fica responsável por reduzir gradualmente a sua dimensão, e o decoder que é responsável por receber uma entrada em menor dimensão e aumentá-la gradualmente. fazendo uma analogia com imagens, o encoder vai diminuir a resolução dessa imagem e o decoder vai aumentá-la. Então o objetivo do autoencoder é reproduzir a entrada.
  
 Mas qual o sentido de prever a mesma coisa? O segredo dos autoencoders está no processo de redução de dimensionalidade, já que a rede neural deve encontrar uma forma de representar os dados em uma menor dimensão (algo parecido com o que o PCA faz), é esse tipo de característica que impede o autoencoder de apenas aprender uma função identidade. Dito isso, existem várias aplicações para os autoencoders, as mais comuns são: Geração de conteúdo, Detecção de anomalias e remoção de ruídos.
 
-Nesse post eu vou abordar a remoção de ruído utilizando autoencoders, mais precisamente, a remoção de ruídos em imagens. Ruído este que pode ser produto de um redimensionamento ou problema na camera fotografica. Para realizar essa tarefa, os dados de treinamento do autoencoder passam por um processo de inserção de ruído e após isso o autoencoder e treinando para ter como entrada uma imagem com ruído e obter como saída essa imagem sem ruído. Eu também vou comparar o resultado da remoção de ruído utilizando o autoencoder contra dois dos algoritmos mais básicos para resolver essa tarefa. Os filtros de média e mediana. O filtro da média consiste em para cada pixel da imagem tirar a média dos pixels ao redor, já o da mediana é quase igual, com a exceção de que se tira
+Nesse post eu vou abordar a remoção de ruído utilizando autoencoders. Mais precisamente, a remoção de ruídos em imagens. Ruído este que pode ser produto de um redimensionamento ou problema na camera fotografica. Para realizar essa tarefa, os dados de treinamento do autoencoder passam por um processo de inserção de ruído e após isso o autoencoder e treinando para ter como entrada uma imagem com ruído e obter como saída essa imagem sem ruído. Eu também vou comparar o resultado da remoção de ruído utilizando o autoencoder com dois dos algoritmos mais básicos para resolver essa tarefa, que são os filtros de média e mediana. O filtro da média consiste em para cada pixel da imagem tirar a média dos pixels ao redor, já o da mediana é quase igual, com a exceção de que se tira
 a mediana dos pixels ao redor. Uma desvantagem do autoencoder é que ele é específico de domínio, ou seja, enquanto os filtros de média e mediana podem ser usados em qualquer imagem o autoencoder só pode ser usado em imagens do domínio que ele foi treinado. Esse problema pode ser contornado utilizando imagens de vários domínios mas os resultado não são tão bons. Já uma desvantagens dos filtros de média e mediana é que eles não se saem bem em imagens coloridas. 
  
 O código utilizado para obtenção dos resultados está na minha [página][link_do_codigo] do github, ele está no formato de júpiter notebook.
@@ -78,8 +78,7 @@ A imagem abaixo mostra a aplicação desses quatro ruídos em uma imagem do conj
 
 # Treinamento do autoencoder
 
-Para o treinamento os dados de entrada,com ruído, e de saída, sem, foram divididos entre treino e teste, em uma proporção de 
-75% para treino e 25% para teste.
+Para o treinamento, os dados de entrada, com ruído, e de saída, sem, foram divididos entre treino e teste, em uma proporção de 75% para treino e 25% para teste.
 A arquitetura do autoencoder utilizado nesse post está mostrada abaixo:
 
         Model: "encoder"
