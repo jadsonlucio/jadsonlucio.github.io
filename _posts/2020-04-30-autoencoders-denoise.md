@@ -15,7 +15,7 @@ Mas qual o sentido de prever a mesma coisa? O segredo dos autoencoders está no 
 Nesse post eu vou abordar a remoção de ruído utilizando autoencoders, mais precisamente, a remoção de ruídos em imagens. Ruído este que pode ser produto de um redimensionamento ou problema na camera fotografica. Para realizar essa tarefa, os dados de treinamento do autoencoder passam por um processo de inserção de ruído e após isso o autoencoder e treinando para ter como entrada uma imagem com ruído e obter como saída essa imagem sem ruído. Eu também vou comparar o resultado da remoção de ruído utilizando o autoencoder contra dois dos algoritmos mais básicos para resolver essa tarefa. Os filtros de média e mediana. O filtro da média consiste em para cada pixel da imagem tirar a média dos pixels ao redor, já o da mediana é quase igual, com a exceção de que se tira
 a mediana dos pixels ao redor. Uma desvantagem do autoencoder é que ele é específico de domínio, ou seja, enquanto os filtros de média e mediana podem ser usados em qualquer imagem o autoencoder só pode ser usado em imagens do domínio que ele foi treinado. Esse problema pode ser contornado utilizando imagens de vários domínios mas os resultado não são tão bons. Já uma desvantagens dos filtros de média e mediana é que eles não se saem bem em imagens coloridas. 
  
-O código utilizado para obtenção dos resultados está na minha página do github [link_do_codigo], ele está no formato de júpiter notebook.
+O código utilizado para obtenção dos resultados está na minha [página][link_do_codigo] do github, ele está no formato de júpiter notebook.
 
 # Conjunto de dados e pré-processamento
 
@@ -180,3 +180,4 @@ Os resultados mostram que utilizando a GAN, o processo de ruído não apresentou
 [gans_style_transfer]: https://arxiv.org/abs/1703.10593
 [gans_image_inpaint]: https://arxiv.org/abs/1703.05192
 [gans_superesolution]: https://arxiv.org/abs/1609.04802
+[link_do_codigo]: https://github.com/jadsonlucio/Posts-source-code/tree/master/Autoencoders%20denoising
